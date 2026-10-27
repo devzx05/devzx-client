@@ -29,11 +29,12 @@ private static final int MUTED = 0xFFB8C5D6;
     }
 
     @Override
-    protected void init() {
-        panelW = Math.min(560, width - 24);
-        panelH = Math.min(350, height - 24);
-        panelX = (width - panelW) / 2;
-        panelY = (height - panelH) / 2;
+protected void init() {
+    panelW = 340;
+    panelH = 210;
+    panelX = (width - panelW) / 2;
+    panelY = (height - panelH) / 2;
+}
     }
 
     @Override
