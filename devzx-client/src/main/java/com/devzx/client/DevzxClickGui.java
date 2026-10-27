@@ -50,14 +50,14 @@ private static final int MUTED = 0xFFB8C5D6;
                 panelX + panelW, panelY + 2, TEAL);
 
         // Header.
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "devzx",
                 panelX + 16, panelY + 13, TEAL);
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "CLIENT  /  1.21.1",
                 panelX + 67, panelY + 14, MUTED);
 
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "X",
                 panelX + panelW - 20, panelY + 14, TEXT);
 
@@ -72,7 +72,7 @@ private static final int MUTED = 0xFFB8C5D6;
         ctx.fill(sideX, sideY,
                 sideX + sidebarW, sideBottom, 0xFF0D121A);
 
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "CATEGORIES",
                 sideX + 12, sideY + 15, MUTED);
 
@@ -96,16 +96,16 @@ private static final int MUTED = 0xFFB8C5D6;
                         0xFF19212C);
             }
 
-            ctx.drawTextWithShadow(
+            ctx.drawText(
                     textRenderer, CATEGORIES[i],
                     sideX + 15, itemY + 8,
                     selected ? TEAL : TEXT);
         }
 
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "RIGHT SHIFT",
                 sideX + 12, sideBottom - 28, MUTED);
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "to toggle",
                 sideX + 12, sideBottom - 17, MUTED);
 
@@ -114,10 +114,10 @@ private static final int MUTED = 0xFFB8C5D6;
         int contentW = panelW - sidebarW - 28;
         int contentY = panelY + 49;
 
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, CATEGORIES[selectedCategory],
                 contentX, contentY, TEXT);
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, "Toggle modules to customize your client",
                 contentX, contentY + 15, MUTED);
 
@@ -177,9 +177,9 @@ private static final int MUTED = 0xFFB8C5D6;
         ctx.fill(x, y, x + 2, y + CARD_H,
                 on ? TEAL : 0xFF303A47);
 
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, name, x + 11, y + 9, TEXT);
-        ctx.drawTextWithShadow(
+        ctx.drawText(
                 textRenderer, description, x + 11, y + 25, MUTED);
 
         int switchW = 28;
