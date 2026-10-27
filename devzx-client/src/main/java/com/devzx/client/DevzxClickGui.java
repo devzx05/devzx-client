@@ -35,7 +35,7 @@ protected void init() {
     panelX = (width - panelW) / 2;
     panelY = (height - panelH) / 2;
 }
-    }
+    
 
     @Override
     public void render(
