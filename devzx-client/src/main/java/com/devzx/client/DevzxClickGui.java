@@ -87,7 +87,7 @@ public final class DevzxClickGui extends Screen {
     @Override
     public void render(
             DrawContext ctx, int mouseX, int mouseY, float delta) {
-        renderBackground(ctx, mouseX, mouseY, delta);
+        ctx.fill(0, 0, width, height, 0xE6080B12);
         ctx.fill(panelX, panelY,
                 panelX + panelW, panelY + panelH, PANEL);
         ctx.fill(panelX, panelY,
