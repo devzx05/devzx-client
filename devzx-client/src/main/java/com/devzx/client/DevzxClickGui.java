@@ -21,8 +21,8 @@ private static final int MUTED = 0xFFB8C5D6;
     private int sidebarW = 112;
     private int selectedCategory = 0;
 
-    private static final int CARD_H = 48;
-    private static final int CARD_GAP = 9;
+    private static final int CARD_H = 42;
+    private static final int CARD_GAP = 6;
 
     public DevzxClickGui() {
         super(Text.literal("devzx client"));
