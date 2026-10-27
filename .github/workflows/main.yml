@@ -1,0 +1,42 @@
+
+name: Build devzx client
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+
+      - name: Build devzx client
+        working-directory: devzx-client
+        run: gradle --no-daemon clean build
+
+      - name: Upload client JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: devzx-client-minecraft-1.21.1
+          path: |
+            devzx-client/build/libs/devzx-client-*.jar
+            !devzx-client/build/libs/*-sources.jar
+          if-no-files-found: error
+          retention-days: 14
