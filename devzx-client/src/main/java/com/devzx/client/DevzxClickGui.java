@@ -6,12 +6,12 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
 public final class DevzxClickGui extends Screen {
-    private static final int TEAL = 0xFF35F2D0;
-    private static final int BACKGROUND = 0xF0090C12;
-    private static final int PANEL = 0xFF111720;
-    private static final int CARD = 0xFF171F2A;
-    private static final int TEXT = 0xFFF0F5FA;
-    private static final int MUTED = 0xFF8291A3;
+private static final int TEAL = 0xFF35F2D0;
+private static final int BACKGROUND = 0xFF090C12;
+private static final int PANEL = 0xFF0D121A;
+private static final int CARD = 0xFF171F2A;
+private static final int TEXT = 0xFFFFFFFF;
+private static final int MUTED = 0xFFB8C5D6;
 
     private static final String[] CATEGORIES = {
         "Visuals", "Performance", "Interface"
@@ -41,7 +41,7 @@ public final class DevzxClickGui extends Screen {
             DrawContext ctx, int mouseX, int mouseY, float delta) {
 
         // Darken the world behind the menu.
-        ctx.fill(0, 0, width, height, 0xB8000000);
+        ctx.fill(0, 0, width, height, 0xFF05070B);
 
         // Main window and teal top edge.
         ctx.fill(panelX, panelY,
