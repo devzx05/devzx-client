@@ -50,9 +50,9 @@ private static final int MUTED = 0xFFB8C5D6;
                 panelX + panelW, panelY + 2, TEAL);
 
         // Header.
-        ctx.drawText(
+        ctx.drawTextWithShadow(
         textRenderer, "devzx",
-        panelX + 16, panelY + 13, TEAL, false);
+        panelX + 16, panelY + 13, TEAL);
 ctx.drawText(
         textRenderer, "CLIENT  /  1.21.1",
         panelX + 67, panelY + 14, MUTED, false);
