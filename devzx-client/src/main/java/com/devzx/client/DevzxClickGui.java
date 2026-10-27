@@ -51,15 +51,15 @@ private static final int MUTED = 0xFFB8C5D6;
 
         // Header.
         ctx.drawText(
-                textRenderer, "devzx",
-                panelX + 16, panelY + 13, TEAL);
-        ctx.drawText(
-                textRenderer, "CLIENT  /  1.21.1",
-                panelX + 67, panelY + 14, MUTED);
+        textRenderer, "devzx",
+        panelX + 16, panelY + 13, TEAL, false);
+ctx.drawText(
+        textRenderer, "CLIENT  /  1.21.1",
+        panelX + 67, panelY + 14, MUTED, false);
 
-        ctx.drawText(
-                textRenderer, "X",
-                panelX + panelW - 20, panelY + 14, TEXT);
+ctx.drawText(
+        textRenderer, "X",
+        panelX + panelW - 20, panelY + 14, TEXT, false);
 
         ctx.fill(panelX + 1, panelY + 34,
                 panelX + panelW - 1, panelY + 35, 0xFF26313D);
@@ -72,9 +72,11 @@ private static final int MUTED = 0xFFB8C5D6;
         ctx.fill(sideX, sideY,
                 sideX + sidebarW, sideBottom, 0xFF0D121A);
 
-        ctx.drawText(
-                textRenderer, "CATEGORIES",
-                sideX + 12, sideY + 15, MUTED);
+        
+ctx.drawText(
+        textRenderer, "CATEGORIES",
+        sideX + 12, sideY + 15, MUTED, false);
+
 
         for (int i = 0; i < CATEGORIES.length; i++) {
             int itemY = sideY + 31 + i * 31;
@@ -96,30 +98,38 @@ private static final int MUTED = 0xFFB8C5D6;
                         0xFF19212C);
             }
 
-            ctx.drawText(
-                    textRenderer, CATEGORIES[i],
-                    sideX + 15, itemY + 8,
-                    selected ? TEAL : TEXT);
+            
+ctx.drawText(
+        textRenderer, CATEGORIES[i],
+        sideX + 15, itemY + 8,
+        selected ? TEAL : TEXT, false);
+
         }
 
-        ctx.drawText(
-                textRenderer, "RIGHT SHIFT",
-                sideX + 12, sideBottom - 28, MUTED);
-        ctx.drawText(
-                textRenderer, "to toggle",
-                sideX + 12, sideBottom - 17, MUTED);
+        
+ctx.drawText(
+        textRenderer, "RIGHT SHIFT",
+        sideX + 12, sideBottom - 28, MUTED, false);
+
+ctx.drawText(
+        textRenderer, "to toggle",
+        sideX + 12, sideBottom - 17, MUTED, false);
+
 
         // Content area.
         int contentX = panelX + sidebarW + 16;
         int contentW = panelW - sidebarW - 28;
         int contentY = panelY + 49;
 
-        ctx.drawText(
-                textRenderer, CATEGORIES[selectedCategory],
-                contentX, contentY, TEXT);
-        ctx.drawText(
-                textRenderer, "Toggle modules to customize your client",
-                contentX, contentY + 15, MUTED);
+        
+ctx.drawText(
+        textRenderer, CATEGORIES[selectedCategory],
+        contentX, contentY, TEXT, false);
+
+ctx.drawText(
+        textRenderer, "Toggle modules to customize your client",
+        contentX, contentY + 15, MUTED, false);
+
 
         int cardY = contentY + 35;
 
@@ -177,10 +187,13 @@ private static final int MUTED = 0xFFB8C5D6;
         ctx.fill(x, y, x + 2, y + CARD_H,
                 on ? TEAL : 0xFF303A47);
 
-        ctx.drawText(
-                textRenderer, name, x + 11, y + 9, TEXT);
-        ctx.drawText(
-                textRenderer, description, x + 11, y + 25, MUTED);
+        
+ctx.drawText(
+        textRenderer, name, x + 11, y + 9, TEXT, false);
+
+ctx.drawText(
+        textRenderer, description, x + 11, y + 25, MUTED, false);
+
 
         int switchW = 28;
         int switchH = 14;
