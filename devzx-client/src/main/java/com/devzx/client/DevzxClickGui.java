@@ -53,13 +53,14 @@ private static final int MUTED = 0xFFB8C5D6;
         ctx.drawTextWithShadow(
         textRenderer, "devzx",
         panelX + 16, panelY + 13, TEAL);
-ctx.drawText(
-        textRenderer, "CLIENT  /  1.21.1",
-        panelX + 67, panelY + 14, MUTED, false);
 
-ctx.drawText(
+ctx.drawTextWithShadow(
+        textRenderer, "CLIENT  /  1.21.1",
+        panelX + 67, panelY + 14, MUTED);
+
+ctx.drawTextWithShadow(
         textRenderer, "X",
-        panelX + panelW - 20, panelY + 14, TEXT, false);
+        panelX + panelW - 20, panelY + 14, TEXT);
 
         ctx.fill(panelX + 1, panelY + 34,
                 panelX + panelW - 1, panelY + 35, 0xFF26313D);
@@ -73,9 +74,9 @@ ctx.drawText(
                 sideX + sidebarW, sideBottom, 0xFF0D121A);
 
         
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, "CATEGORIES",
-        sideX + 12, sideY + 15, MUTED, false);
+        sideX + 12, sideY + 15, MUTED);
 
 
         for (int i = 0; i < CATEGORIES.length; i++) {
@@ -99,21 +100,21 @@ ctx.drawText(
             }
 
             
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, CATEGORIES[i],
         sideX + 15, itemY + 8,
-        selected ? TEAL : TEXT, false);
+        selected ? TEAL : TEXT);
 
         }
 
         
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, "RIGHT SHIFT",
-        sideX + 12, sideBottom - 28, MUTED, false);
+        sideX + 12, sideBottom - 28, MUTED);
 
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, "to toggle",
-        sideX + 12, sideBottom - 17, MUTED, false);
+        sideX + 12, sideBottom - 17, MUTED);
 
 
         // Content area.
@@ -122,13 +123,13 @@ ctx.drawText(
         int contentY = panelY + 49;
 
         
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, CATEGORIES[selectedCategory],
-        contentX, contentY, TEXT, false);
+        contentX, contentY, TEXT);
 
-ctx.drawText(
+ctx.drawTextWithShadow(
         textRenderer, "Toggle modules to customize your client",
-        contentX, contentY + 15, MUTED, false);
+        contentX, contentY + 15, MUTED);
 
 
         int cardY = contentY + 35;
@@ -188,11 +189,11 @@ ctx.drawText(
                 on ? TEAL : 0xFF303A47);
 
         
-ctx.drawText(
-        textRenderer, name, x + 11, y + 9, TEXT, false);
+ctx.drawTextWithShadow(
+        textRenderer, name, x + 11, y + 9, TEXT);
 
-ctx.drawText(
-        textRenderer, description, x + 11, y + 25, MUTED, false);
+ctx.drawTextWithShadow(
+        textRenderer, description, x + 11, y + 25, MUTED);
 
 
         int switchW = 28;
