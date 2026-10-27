@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "devzxclient",
+  "version": "${version}",
+  "name": "devzx client",
+  "description": "A dark neon client-side HUD and customization starter for Minecraft 1.21.1.",
+  "authors": ["devzx"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.devzx.client.DevzxClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
