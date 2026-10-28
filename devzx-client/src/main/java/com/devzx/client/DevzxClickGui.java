@@ -216,20 +216,24 @@ ctx.drawTextWithShadow(
                 && my >= y && my < y + h;
     }
 
+    
     @Override
-public boolean mouseClicked(
-        net.minecraft.client.gui.Click click, boolean doubled) {
-    double mouseX = click.x();
-    double mouseY = click.y();
-    int button = click.button();
+    public boolean mouseClicked(
+            net.minecraft.client.gui.Click click, boolean doubled) {
+        double mouseX = click.x();
+        double mouseY = click.y();
+        int button = click.button();
 
-    if (button != 0) return super.mouseClicked(click, doubled);
+        if (button != 0) {
+            return super.mouseClicked(click, doubled);
+        }
 
         int sideX = panelX + 1;
         int sideY = panelY + 35;
 
         for (int i = 0; i < CATEGORIES.length; i++) {
             int itemY = sideY + 31 + i * 31;
+
             if (inside(mouseX, mouseY,
                     sideX + 7, itemY, sidebarW - 14, 25)) {
                 selectedCategory = i;
@@ -241,44 +245,51 @@ public boolean mouseClicked(
         int contentW = panelW - sidebarW - 28;
         int cardY = panelY + 49 + 35;
 
-        if (selectedCategory == 0) {
-            if (hit(mouseX, mouseY, contentX, cardY, contentW))
-                DevzxClient.hudEnabled = !DevzxClient.hudEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 57, contentW))
-                DevzxClient.fpsEnabled = !DevzxClient.fpsEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 114, contentW))
-                DevzxClient.cpsEnabled = !DevzxClient.cpsEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 171, contentW))
-                DevzxClient.keystrokesEnabled = !DevzxClient.keystrokesEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 228, contentW))
-                DevzxClient.armorEnabled = !DevzxClient.armorEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 285, contentW))
-                DevzxClient.customCrosshairEnabled =
-                        !DevzxClient.customCrosshairEnabled;
-            else if (inside(mouseX, mouseY,
-                    panelX + panelW - 28, panelY + 5, 25, 28))
-                close();
-        } else if (selectedCategory == 1) {
-            if (hit(mouseX, mouseY, contentX, cardY, contentW))
-                DevzxClient.fpsOptimizationEnabled =
-                        !DevzxClient.fpsOptimizationEnabled;
-        } else {
-            if (hit(mouseX, mouseY, contentX, cardY, contentW))
-                DevzxClient.animationsEnabled =
-                        !DevzxClient.animationsEnabled;
-            else if (hit(mouseX, mouseY, contentX,
-                    cardY + 57, contentW))
-                DevzxClient.cosmeticsEnabled =
-                        !DevzxClient.cosmeticsEnabled;
+        if (inside(mouseX, mouseY,
+                panelX + panelW - 28, panelY + 5, 25, 28)) {
+            close();
+            return true;
         }
 
+        if (selectedCategory == 0) {
+            if (hit(mouseX, mouseY, contentX, cardY, contentW)) {
+                DevzxClient.hudEnabled = !DevzxClient.hudEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 57, contentW)) {
+                DevzxClient.fpsEnabled = !DevzxClient.fpsEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 114, contentW)) {
+                DevzxClient.cpsEnabled = !DevzxClient.cpsEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 171, contentW)) {
+                DevzxClient.keystrokesEnabled =
+                        !DevzxClient.keystrokesEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 228, contentW)) {
+                DevzxClient.armorEnabled = !DevzxClient.armorEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 285, contentW)) {
+                DevzxClient.customCrosshairEnabled =
+                        !DevzxClient.customCrosshairEnabled;
+            }
+        } else if (selectedCategory == 1) {
+            if (hit(mouseX, mouseY, contentX, cardY, contentW)) {
+                DevzxClient.fpsOptimizationEnabled =
+                        !DevzxClient.fpsOptimizationEnabled;
+            }
+        } else {
+            if (hit(mouseX, mouseY, contentX, cardY, contentW)) {
+                DevzxClient.animationsEnabled =
+                        !DevzxClient.animationsEnabled;
+            } else if (hit(mouseX, mouseY, contentX,
+                    cardY + 57, contentW)) {
+                DevzxClient.cosmeticsEnabled =
+                        !DevzxClient.cosmeticsEnabled;
+            }
+        }
         return true;
     }
+        
 
     private boolean hit(
             double mx, double my, int x, int y, int w) {
