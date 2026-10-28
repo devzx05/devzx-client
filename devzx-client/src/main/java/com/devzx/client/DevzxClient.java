@@ -31,13 +31,19 @@ public final class DevzxClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        clickGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.devzxclient.clickgui", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_RIGHT_SHIFT, "category.devzxclient"));
+        
+clickGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+        "key.devzxclient.clickgui", InputUtil.Type.KEYSYM,
+        GLFW.GLFW_KEY_RIGHT_SHIFT,
+        net.minecraft.client.option.KeyBinding.Category
+                .create("category.devzxclient.clickgui")));
 
-        menuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.devzxclient.menu", InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_RIGHT_CONTROL, "category.devzxclient"));
+menuKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+        "key.devzxclient.menu", InputUtil.Type.KEYSYM,
+        GLFW.GLFW_KEY_RIGHT_CONTROL,
+        net.minecraft.client.option.KeyBinding.Category
+                .create("category.devzxclient.menu")));
+
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (clickGuiKey.wasPressed()) {
