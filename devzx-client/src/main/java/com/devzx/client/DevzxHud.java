@@ -64,7 +64,7 @@ public final class DevzxHud {
 
         ctx.drawTextWithShadow(
                 client.textRenderer,
-                "1.21.1",
+                "1.21.11",
                 x + 8, y + 14, 0xFFE7EDF7
         );
     }
@@ -120,7 +120,7 @@ private static void drawArmor(
         MinecraftClient client, DrawContext ctx, int x, int y) {
     int slot = 0;
 
-    for (ItemStack stack : client.player.getArmorItems()) {
+for (ItemStack stack : client.player.getArmor()) {
         int bx = x + slot * 23;
         ctx.fill(bx, y, bx + 21, y + 23, PANEL);
 
