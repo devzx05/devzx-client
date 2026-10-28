@@ -217,9 +217,13 @@ ctx.drawTextWithShadow(
     }
 
     @Override
-    public boolean mouseClicked(
-            double mouseX, double mouseY, int button) {
-        if (button != 0) return super.mouseClicked(mouseX, mouseY, button);
+public boolean mouseClicked(
+        net.minecraft.client.gui.Click click, boolean doubled) {
+    double mouseX = click.x();
+    double mouseY = click.y();
+    int button = click.button();
+
+    if (button != 0) return super.mouseClicked(click, doubled);
 
         int sideX = panelX + 1;
         int sideY = panelY + 35;
