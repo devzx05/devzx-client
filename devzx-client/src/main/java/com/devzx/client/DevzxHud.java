@@ -115,28 +115,30 @@ public final class DevzxHud {
         );
     }
 
-    private static void drawArmor(
-            MinecraftClient client, DrawContext ctx, int x, int y) {
-        int slot = 0;
+    
+private static void drawArmor(
+        MinecraftClient client, DrawContext ctx, int x, int y) {
+    int slot = 0;
 
-        for (ItemStack stack : client.player.getArmorItems()) {
-            int bx = x + slot * 23;
-            ctx.fill(bx, y, bx + 21, y + 23, PANEL);
+    for (ItemStack stack : client.player.getArmorItems()) {
+        int bx = x + slot * 23;
+        ctx.fill(bx, y, bx + 21, y + 23, PANEL);
 
-            if (!stack.isEmpty()) {
-                ctx.drawItem(stack, bx + 2, y + 2);
-                ctx.drawItemInSlot(
-                        client.textRenderer, stack, bx + 2, y + 2
-                );
-            } else {
-                ctx.drawTextWithShadow(
-                        client.textRenderer, "-", bx + 8, y + 7,
-                        0xFF687386
-                );
-            }
-            slot++;
+        if (!stack.isEmpty()) {
+            ctx.drawItem(stack, bx + 2, y + 2);
+            ctx.drawStackOverlay(
+                    client.textRenderer, stack, bx + 2, y + 2
+            );
+        } else {
+            ctx.drawTextWithShadow(
+                    client.textRenderer, "-", bx + 8, y + 7,
+                    0xFF687386
+            );
         }
+        slot++;
     }
+}
+
 
     private static void drawCrosshair(
             int cx, int cy, DrawContext ctx) {
